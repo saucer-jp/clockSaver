@@ -12,6 +12,14 @@
 		1B3C40FE178F8C4A00F0886F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C40FC178F8C4A00F0886F /* InfoPlist.strings */; };
 		1B3C4102178F8C4A00F0886F /* clockSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C4101178F8C4A00F0886F /* clockSaverView.m */; };
 		1B3C4109178F8D3500F0886F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3C4108178F8D3500F0886F /* WebKit.framework */; };
+		1B3C410B178FA69C00F0886F /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C410A178FA69C00F0886F /* index.html */; };
+		1B3C4113178FA6A700F0886F /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C4110178FA6A700F0886F /* style.css */; };
+		1B3C411A178FA6B100F0886F /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C4116178FA6B100F0886F /* Signika-Bold.ttf */; };
+		1B3C411B178FA6B100F0886F /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C4117178FA6B100F0886F /* Signika-Light.ttf */; };
+		1B3C411C178FA6B100F0886F /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C4118178FA6B100F0886F /* Signika-Regular.ttf */; };
+		1B3C411D178FA6B100F0886F /* Signika-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C4119178FA6B100F0886F /* Signika-Semibold.ttf */; };
+		1B3C4125178FA72B00F0886F /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C4120178FA6CF00F0886F /* app.js */; };
+		1B3C4126178FA73000F0886F /* jquery-2.0.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C4122178FA6CF00F0886F /* jquery-2.0.3.min.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +35,14 @@
 		1B3C4100178F8C4A00F0886F /* clockSaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clockSaverView.h; sourceTree = "<group>"; };
 		1B3C4101178F8C4A00F0886F /* clockSaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clockSaverView.m; sourceTree = "<group>"; };
 		1B3C4108178F8D3500F0886F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		1B3C410A178FA69C00F0886F /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = src/index.html; sourceTree = "<group>"; };
+		1B3C4110178FA6A700F0886F /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		1B3C4116178FA6B100F0886F /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
+		1B3C4117178FA6B100F0886F /* Signika-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.ttf"; sourceTree = "<group>"; };
+		1B3C4118178FA6B100F0886F /* Signika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.ttf"; sourceTree = "<group>"; };
+		1B3C4119178FA6B100F0886F /* Signika-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Semibold.ttf"; sourceTree = "<group>"; };
+		1B3C4120178FA6CF00F0886F /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.js; sourceTree = "<group>"; };
+		1B3C4122178FA6CF00F0886F /* jquery-2.0.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-2.0.3.min.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +101,12 @@
 			isa = PBXGroup;
 			children = (
 				1B3C4100178F8C4A00F0886F /* clockSaverView.h */,
+				1B3C411F178FA6CF00F0886F /* js */,
+				1B3C410A178FA69C00F0886F /* index.html */,
+				1B3C410C178FA6A700F0886F /* css */,
 				1B3C4101178F8C4A00F0886F /* clockSaverView.m */,
+				1B3C411E178FA6BE00F0886F /* img */,
+				1B3C4115178FA6B100F0886F /* font */,
 				1B3C40FA178F8C4A00F0886F /* Supporting Files */,
 			);
 			path = clockSaver;
@@ -99,6 +120,53 @@
 				1B3C40FF178F8C4A00F0886F /* clockSaver-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B3C410C178FA6A700F0886F /* css */ = {
+			isa = PBXGroup;
+			children = (
+				1B3C4110178FA6A700F0886F /* style.css */,
+			);
+			name = css;
+			path = src/css;
+			sourceTree = "<group>";
+		};
+		1B3C4115178FA6B100F0886F /* font */ = {
+			isa = PBXGroup;
+			children = (
+				1B3C4116178FA6B100F0886F /* Signika-Bold.ttf */,
+				1B3C4117178FA6B100F0886F /* Signika-Light.ttf */,
+				1B3C4118178FA6B100F0886F /* Signika-Regular.ttf */,
+				1B3C4119178FA6B100F0886F /* Signika-Semibold.ttf */,
+			);
+			name = font;
+			path = src/font;
+			sourceTree = "<group>";
+		};
+		1B3C411E178FA6BE00F0886F /* img */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = img;
+			path = src/img;
+			sourceTree = "<group>";
+		};
+		1B3C411F178FA6CF00F0886F /* js */ = {
+			isa = PBXGroup;
+			children = (
+				1B3C4120178FA6CF00F0886F /* app.js */,
+				1B3C4121178FA6CF00F0886F /* lib */,
+			);
+			name = js;
+			path = src/js;
+			sourceTree = "<group>";
+		};
+		1B3C4121178FA6CF00F0886F /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				1B3C4122178FA6CF00F0886F /* jquery-2.0.3.min.js */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +232,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B3C4126178FA73000F0886F /* jquery-2.0.3.min.js in Resources */,
+				1B3C4125178FA72B00F0886F /* app.js in Resources */,
 				1B3C40FE178F8C4A00F0886F /* InfoPlist.strings in Resources */,
+				1B3C410B178FA69C00F0886F /* index.html in Resources */,
+				1B3C4113178FA6A700F0886F /* style.css in Resources */,
+				1B3C411A178FA6B100F0886F /* Signika-Bold.ttf in Resources */,
+				1B3C411B178FA6B100F0886F /* Signika-Light.ttf in Resources */,
+				1B3C411C178FA6B100F0886F /* Signika-Regular.ttf in Resources */,
+				1B3C411D178FA6B100F0886F /* Signika-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
