@@ -15,14 +15,31 @@ $bodyBottomColor: lighten( getDarkColor( $baseColor ), 3 );
 
 //$sparkleColor: getSparkleColor( $baseColor );
 $sparkleColor: rgba( getSparkleColor( $baseColor ), 0.8 );
+$darkColor: rgba( getDarkColor( $baseColor ), 0.8 );
 
-$text-shadow: 0 0 8px $baseColor;
+$textShadow: 0 0 8px $baseColor;
+$boxShadow: 0 0 10px 2px rgba( $baseColor, 0.6 );
 
 
 
 // ***********************
 // extend
 // ***********************
+%ex-boxShadow {
+  background: rgba( getSparkleColor( $baseColor ), 0.75 );
+  -webkit-filter: drop-shadow( 0 0 10px rgba( $baseColor, 0.8 ) );
+}
+
+%ex-borderShadow {
+  border-color: rgba( getSparkleColor( $baseColor ), 0.75 );
+  -webkit-filter: drop-shadow( 0 0 10px rgba( $baseColor, 0.8 ) );
+}
+
+%ex-slash {
+  display: inline-block;
+  border-radius: 2px;
+  -webkit-transform: rotate( 20deg );
+}
 
 
 
@@ -69,6 +86,8 @@ body {
 // container
 // ***********************
 #container {
+  //outline: 1px solid #fff; /////////////////////////////////////////////
+  position: relative;
   margin: auto;
   width: 1200px;
   height: 640px;
@@ -77,18 +96,423 @@ body {
 // ***********************
 // main clock
 // ***********************
+#mainClock {
+  //outline: 1px solid #fff; /////////////////////////////////////////////
+  //display: none; ///////////////////////////////////////////////
+  position: relative;
+  margin: auto;
+  top: 50px;
+  width: 590px;
+
+  @mixin before {
+    font-family: 'signikasemibold';
+    font-size: 12px;
+    position: absolute;
+  }
+
+  // date
+  .date {
+    position: relative;
+    font-family: 'signikaregular';
+    display: block;
+    font-size: 60px;
+    text-shadow: $textShadow;
+
+    @mixin dateBefore {
+      top: 5px;
+    }
+    .year {
+      &:before {
+        @include before;
+        @include dateBefore;
+        content: 'year';
+      }
+    }
+    .month {
+      &:before {
+        @include before;
+        @include dateBefore;
+        content: 'month';
+      }
+    }
+    .day {
+      &:before {
+        @include before;
+        @include dateBefore;
+        content: 'day';
+      }
+    }
+    @mixin slash {
+      margin-left: 40px;
+      margin-right: 36px;
+      vertical-align: -6px;
+      width: 6px;
+      height: 78px;
+    }
+    .slash1 {
+      @include slash;
+      @extend %ex-slash;
+      @extend %ex-boxShadow;
+    }
+    .slash2 {
+      @include slash;
+      @extend %ex-slash;
+      @extend %ex-boxShadow;
+    }
+  }
+
+  // hours
+  .hours {
+    position: relative;
+    font-family: 'signikaregular';
+    display: block;
+    font-size: 146px;
+    margin-top: -20px;
+    text-shadow: $textShadow;
+
+    @mixin hoursBefore {
+      top: 40px;
+    }
+    .hour {
+      margin-left: -6px;
+      &:before {
+        @include before;
+        @include hoursBefore;
+        content: 'hour';
+      }
+    }
+    .minute {
+      &:before {
+        @include before;
+        @include hoursBefore;
+        content: 'minute';
+      }
+    }
+    .second {
+      &:before {
+        @include before;
+        @include hoursBefore;
+        content: 'second';
+      }
+    }
+    .millisecond {
+      font-size: 36px;
+      display: block;
+      margin-top: -2em;
+      position: relative;
+      &:before {
+        @include before;
+        top: 28px;
+        left: 70px;
+        content: 'millisecond';
+      }
+    }
+    .colon {
+      display: inline-block;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+
+  // miniClock
+  .miniClock {
+    position: absolute;
+    right: 10px;
+    bottom: 130px;
+    font-family: 'signikasemibold';
+    font-size: 10px;
+    color: $darkColor;
+    border-radius: 2px;
+    padding: 0 10px;
+    letter-spacing: 1px;
+    @extend %ex-boxShadow;
+
+    .hour {}
+    .minute {}
+    .second {}
+    .millisecond {}
+  }
+
+  // week
+  .week {
+    @extend %ex-borderShadow;
+    border-width: 10px;
+    border-style: solid;
+    box-sizing: border-box;
+    text-align: center;
+    height: 108px;
+
+    @for $i from 1 through 7 {
+      .slash#{$i} {
+        width: 7px;
+        height: 123px;
+        margin: -17px 30px 0;
+        @extend %ex-slash;
+        @extend %ex-boxShadow;
+      }
+    }
+  }
+}
 
 
 
 // ***********************
 // analog clock
 // ***********************
+#analogClock {
+  //outline: 1px solid #fff; /////////////////////////////////////////////
+
+  $outerWidth: 444px;
+  $innerMargin: 80px;
+  $innerWidth: $outerWidth - $innerMargin;
+
+  position: absolute;
+  width: $outerWidth;
+  height: $outerWidth;
+  top: 60px;
+  left: 370px;
+
+  %ex-outer {
+    position: absolute;
+    width: $outerWidth;
+    height: $outerWidth;
+    border-radius: $outerWidth / 2;
+    box-sizing: border-box;
+    border-width: 12px;
+    border-style: solid;
+    border-color: rgba( getSparkleColor( $baseColor ), 0.1 );
+    -webkit-filter: drop-shadow( 0 0 10px rgba( $baseColor, 0.8 ) );
+  }
+  %ex-inner {
+    position: absolute;
+    top: $innerMargin / 2;
+    left: $innerMargin / 2;
+    width: $innerWidth;
+    height: $innerWidth;
+    border-radius: $innerWidth / 2;
+    background: rgba( getSparkleColor( $baseColor ), 0.05 );
+    -webkit-filter: drop-shadow( 0 0 10px rgba( $baseColor, 0.8 ) );
+  }
+  %ex-stop {
+    $stopWidth: 2px;
+    $stopHeight: 26px;
+    width: $stopWidth;
+    height: $stopHeight;
+    left: $outerWidth / 2 - $stopWidth / 2;
+    top: 0;
+    position: absolute;
+    -webkit-transform-origin: 0 $outerWidth / 2;
+  }
+
+  // subHour
+  .subHour {
+    position: absolute;
+    .outer {
+      @extend %ex-outer;
+    }
+    .inner {
+      @extend %ex-inner;
+    }
+    .stops {
+    }
+    @for $i from 1 through 12 {
+      .stop#{$i} {
+        -webkit-transform: rotate( #{ 360 / 12 * $i }deg );
+        @extend %ex-stop;
+        @extend %ex-boxShadow;
+      }
+    }
+    .hourHand {
+      $handWidth: 10px;
+      $handHeight: 158px;
+      width: $handWidth;
+      height: $handHeight;
+      -webkit-transform-origin: 50% 100%;
+      position: absolute;
+      left: $outerWidth / 2 - $handWidth / 2;
+      top: $outerWidth / 2 - $handHeight;
+      @extend %ex-boxShadow;
+    }
+  }
+
+  // subMinute
+  .subMinute {
+    position: absolute;
+    .outer {
+      @extend %ex-outer;
+    }
+    .inner {
+      @extend %ex-inner;
+    }
+    .stops {
+    }
+    @for $i from 1 through 12 {
+      .stop#{$i} {
+        -webkit-transform: rotate( #{ 360 / 12 * $i }deg );
+        @extend %ex-stop;
+        @extend %ex-boxShadow;
+      }
+    }
+    .minuteHand {
+      $handWidth: 6px;
+      $handHeight: 188px;
+      width: $handWidth;
+      height: $handHeight;
+      -webkit-transform-origin: 50% 100%;
+      position: absolute;
+      left: $outerWidth / 2 - $handWidth / 2;
+      top: $outerWidth / 2 - $handHeight;
+      @extend %ex-boxShadow;
+    }
+  }
+
+  // subSecond
+  .subSecond {
+    position: absolute;
+    .outer {
+      @extend %ex-outer;
+    }
+    .inner {
+      @extend %ex-inner;
+    }
+    .stops {
+    }
+    @for $i from 1 through 12 {
+      .stop#{$i} {
+        -webkit-transform: rotate( #{ 360 / 12 * $i }deg );
+        @extend %ex-stop;
+        @extend %ex-boxShadow;
+      }
+    }
+    .secondHand {
+      $handWidth: 2px;
+      $handHeight: 188px;
+      width: $handWidth;
+      height: $handHeight;
+      -webkit-transform-origin: 50% 100%;
+      position: absolute;
+      left: $outerWidth / 2 - $handWidth / 2;
+      top: $outerWidth / 2 - $handHeight;
+      @extend %ex-boxShadow;
+      //-webkit-transform: rotate( 180deg ); ////////////////
+    }
+  }
+}
 
 
 
 // ***********************
 // sub clock
 // ***********************
+#subClock {
+  $subClockWidth: 166px;
+  $subClockMargin: 10px;
+
+  width: $subClockWidth * 3 + $subClockMargin * 2;
+  top: 200px;
+  left: 340px;
+  position: absolute;
+
+  %ex-subClock {
+    position: absolute;
+    width: $subClockWidth;
+  }
+  %ex-text {
+    font-family: 'signikalight';
+    font-size: 10px;
+    line-height: 1.5;
+    text-shadow: $textShadow;
+    padding-bottom: 1em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    @extend %ex-borderShadow;
+  }
+  %ex-h1 {
+    font-family: 'signikasemibold';
+    font-size: 20px;
+    text-shadow: $textShadow;
+    margin: 0;
+    margin-top: -4px;
+  }
+  %ex-h1Before {
+    display: inline-block;
+    text-align: center;
+    line-height: 18px;
+    vertical-align: 3px;
+    margin-right: 10px;
+    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+    @extend %ex-borderShadow;
+  }
+  %ex-time {
+    font-family: 'signikaregular';
+    font-size: 80px;
+    text-shadow: $textShadow;
+    display: block;
+    margin-top: -8px;
+    line-height: 1;
+  }
+
+  .subHour {
+    top: 0;
+    left: 0;
+    @extend %ex-subClock;
+    .text {
+      @extend %ex-text;
+    }
+    h1 {
+      @extend %ex-h1;
+      &:before {
+        content: 'H';
+        @extend %ex-h1Before;
+      }
+    }
+    time {
+      @extend %ex-time;
+    }
+  }
+  .subMinute {
+    top: 0;
+    left: $subClockWidth * 1 + $subClockMargin;
+    @extend %ex-subClock;
+    .text {
+      @extend %ex-text;
+    }
+    h1 {
+      @extend %ex-h1;
+      &:before {
+        content: 'M';
+        @extend %ex-h1Before;
+      }
+    }
+    time {
+      @extend %ex-time;
+    }
+  }
+  .subSecond {
+    top: 0;
+    left: $subClockWidth * 2 + $subClockMargin * 2;
+    @extend %ex-subClock;
+    .text {
+      @extend %ex-text;
+    }
+    h1 {
+      @extend %ex-h1;
+      &:before {
+        content: 'S';
+        @extend %ex-h1Before;
+      }
+    }
+    time {
+      @extend %ex-time;
+    }
+  }
+
+}
 
 
 
@@ -96,15 +520,23 @@ body {
 // detail text
 // ***********************
 #detailText {
+  //outline: 1px solid #fff; /////////////////////////////////////////////
+  position: absolute;
+  bottom: 0;
   font-family: 'signikalight';
   font-size: 10px;
-  text-shadow: $text-shadow;
+  text-shadow: $textShadow;
 }
 
 // ***********************
 // PixelGrid Logo
 // ***********************
 #pxgLogo {
+  //display: none; ///////////////////////////////////////////////
+  //outline: 1px solid #fff; /////////////////////////////////////////////
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 60px;
   height: 14px;
   background-image: url('../img/pixelgrid-logo.svg');
