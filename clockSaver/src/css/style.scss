@@ -1,5 +1,9 @@
+// style.scss file
+
 @import "fontface";
 @import "functions";
+
+
 
 // ***********************
 // base color
@@ -16,6 +20,20 @@ $text-shadow: 0 0 8px $baseColor;
 
 
 
+// ***********************
+// extend
+// ***********************
+
+
+
+// ***********************
+// mixin
+// ***********************
+
+
+
+// ***********************
+// body
 // ***********************
 html,
 body {
@@ -47,18 +65,45 @@ body {
   background-size: 100%;
 }
 
+// ***********************
+// container
+// ***********************
 #container {
   margin: auto;
   width: 1200px;
   height: 640px;
 }
 
+// ***********************
+// main clock
+// ***********************
+
+
+
+// ***********************
+// analog clock
+// ***********************
+
+
+
+// ***********************
+// sub clock
+// ***********************
+
+
+
+// ***********************
+// detail text
+// ***********************
 #detailText {
   font-family: 'signikalight';
   font-size: 10px;
   text-shadow: $text-shadow;
 }
 
+// ***********************
+// PixelGrid Logo
+// ***********************
 #pxgLogo {
   width: 60px;
   height: 14px;
