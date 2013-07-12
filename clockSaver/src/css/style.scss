@@ -1,6 +1,15 @@
 @import "fontface";
 @import "functions";
 
+// ***********************
+// base color
+// ***********************
+$baseColor: #1A85FF; // blue
+
+$bodyTopColor: getDarkColor( $baseColor );
+$bodyBottomColor: lighten( getDarkColor( $baseColor ), 3 );
+
+// ***********************
 html,
 body {
   width: 100%;
@@ -10,7 +19,7 @@ body {
 }
 
 body {
-  background-image: -webkit-linear-gradient(top, #000, #666 );
+  background-image: -webkit-linear-gradient(top, $bodyTopColor, $bodyBottomColor );
   background-repeat: no-repeat;
   background-position: 0 0;
 }
