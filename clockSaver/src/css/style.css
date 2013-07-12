@@ -52,3 +52,10 @@ body {
   margin: auto;
   width: 1366px;
   height: 768px; }
+
+#pxgLogo {
+  width: 60px;
+  height: 14px;
+  background-image: url("../img/pixelgrid-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0; }
