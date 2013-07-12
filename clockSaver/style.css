@@ -1,24 +1,24 @@
 @font-face {
   font-family: 'signikabold';
-  src: url("../font/signika-bold.ttf") format("truetype");
+  src: url("signika-bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'signikalight';
-  src: url("../font/signika-light.ttf") format("truetype");
+  src: url("signika-light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'signikaregular';
-  src: url("../font/signika-regular.ttf") format("truetype");
+  src: url("signika-regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'signikasemibold';
-  src: url("../font/signika-semibold.ttf") format("truetype");
+  src: url("signika-semibold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -57,7 +57,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/body-bg.svg");
+  background-image: url("body-bg.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 100%; }
@@ -399,6 +399,6 @@ body {
   right: 0;
   width: 60px;
   height: 14px;
-  background-image: url("../img/pixelgrid-logo.svg");
+  background-image: url("pixelgrid-logo.svg");
   background-repeat: no-repeat;
   background-position: 0 0; }
