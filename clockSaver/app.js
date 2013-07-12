@@ -27,6 +27,11 @@ $(function(){
   var $mainMillisecond = $mainClock.find( '.millisecond' );
 
 
+  adjustContainerSize();
+  $( window ).on( 'resize', function(){
+    adjustContainerSize();
+  });
+
   renderLowSpeed();
   renderHighSpeed();
   setInterval( renderLowSpeed, 1000 );
@@ -86,6 +91,17 @@ $(function(){
         break;
     }
     return '-webkit-transform:rotate(' + deg + 'deg);';
+  }
+
+  function adjustContainerSize(){
+    var winHeight = $( window ).height();
+    var conHeight = $container.height();
+    var ratio = winHeight / conHeight;
+
+    var scale = '-webkit-transform:scale(' + ratio + ');';
+    $container.attr( 'style', scale );
+
+    console.log( ratio );
   }
 
   
