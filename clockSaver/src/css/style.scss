@@ -1,29 +1,5 @@
+@import "fontface";
 @import "functions";
-
-@font-face {
-  font-family: 'signikabold';
-  src: url('../font/signika-bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'signikalight';
-  src: url('../font/signika-light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'signikaregular';
-  src: url('../font/signika-regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'signikasemibold';
-  src: url('../font/signika-semibold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 html,
 body {
