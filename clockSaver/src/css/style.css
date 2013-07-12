@@ -27,12 +27,14 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: white; }
 
 body {
   background-image: -webkit-linear-gradient(top, #000d1c, #00142b);
   background-repeat: no-repeat;
-  background-position: 0 0; }
+  background-position: 0 0;
+  overflow: hidden; }
 
 .body-bg {
   opacity: 0.05;
@@ -45,3 +47,8 @@ body {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 100%; }
+
+#container {
+  margin: auto;
+  width: 1366px;
+  height: 768px; }
