@@ -28,7 +28,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  color: white; }
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8; }
 
 body {
   background-image: -webkit-linear-gradient(top, #000d1c, #00142b);
@@ -52,6 +53,11 @@ body {
   margin: auto;
   width: 1366px;
   height: 768px; }
+
+#detailText {
+  font-family: 'signikalight';
+  font-size: 10px;
+  text-shadow: 0 0 8px #1a85ff; }
 
 #pxgLogo {
   width: 60px;

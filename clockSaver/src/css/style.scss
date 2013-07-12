@@ -9,7 +9,10 @@ $baseColor: #1A85FF; // blue
 $bodyTopColor: getDarkColor( $baseColor );
 $bodyBottomColor: lighten( getDarkColor( $baseColor ), 3 );
 
-$sparkleColor: getSparkleColor( $baseColor );
+//$sparkleColor: getSparkleColor( $baseColor );
+$sparkleColor: rgba( getSparkleColor( $baseColor ), 0.8 );
+
+$text-shadow: 0 0 8px $baseColor;
 
 
 
@@ -21,6 +24,7 @@ body {
   margin: 0;
   padding: 0;
   color: $sparkleColor;
+  line-height: 1.8;
 }
 
 body {
@@ -47,6 +51,12 @@ body {
   margin: auto;
   width: 1366px;
   height: 768px;
+}
+
+#detailText {
+  font-family: 'signikalight';
+  font-size: 10px;
+  text-shadow: $text-shadow;
 }
 
 #pxgLogo {
