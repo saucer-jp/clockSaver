@@ -1,0 +1,11 @@
+// functions.scss file
+
+@function getSparkleColor( $color ){
+  $amount: 100 - lightness( $color ) * 0.9;
+  @return lighten( $color ,$amount );
+}
+
+@function getDarkColor( $color ){
+  $amount: lightness( $color ) * 0.9;
+  @return darken( $color ,$amount );
+}
