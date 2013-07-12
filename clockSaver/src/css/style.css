@@ -21,3 +21,27 @@
   src: url("../font/signika-semibold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-image: -webkit-linear-gradient(top, black, #666666);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+.body-bg {
+  opacity: 0.05;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/body-bg.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100%; }
