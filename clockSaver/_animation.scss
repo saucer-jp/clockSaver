@@ -1,0 +1,22 @@
+// animation.scss
+
+@-webkit-keyframes 'hoge' {
+  0% {
+    -webkit-transform: rotateX( 80deg ) rotateZ( 0deg );
+  }
+  100% {
+    -webkit-transform: rotateX( 80deg ) rotateZ( 360deg );
+  }
+}
+
+
+
+#container {
+  -webkit-perspective: 600;
+}
+
+#mainClock {
+  //-webkit-transform: rotateX( 80deg ) translate( 0,-150px );
+  //-webkit-transform: scale( 2 );
+  //-webkit-animation: 'hoge' 20s linear infinite;
+}
