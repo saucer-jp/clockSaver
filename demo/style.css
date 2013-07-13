@@ -1,3 +1,4 @@
+/*
 @font-face {
   font-family: 'signikabold';
   src: url("signika-bold.ttf") format("truetype");
@@ -21,6 +22,7 @@
   src: url("signika-semibold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+*/
 
 @-webkit-keyframes 'container' {
   0% {
@@ -146,24 +148,28 @@ body {
   width: 590px; }
   #mainClock .date {
     position: relative;
-    font-family: 'signikaregular';
+font-family: 'Signika', sans-serif;
+font-weight: 400; /* regular */
     display: block;
     font-size: 60px;
     text-shadow: 0 0 8px #1a85ff; }
     #mainClock .date .year:before {
-      font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 700; /* bold */
       font-size: 12px;
       position: absolute;
       top: 5px;
       content: 'year'; }
     #mainClock .date .month:before {
-      font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 700; /* bold */
       font-size: 12px;
       position: absolute;
       top: 5px;
       content: 'month'; }
     #mainClock .date .day:before {
-      font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 700; /* bold */
       font-size: 12px;
       position: absolute;
       top: 5px;
@@ -182,7 +188,8 @@ body {
       height: 78px; }
   #mainClock .hours {
     position: relative;
-    font-family: 'signikaregular';
+font-family: 'Signika', sans-serif;
+font-weight: 400; /* regular */
     display: block;
     font-size: 146px;
     margin-top: -20px;
@@ -190,19 +197,22 @@ body {
     #mainClock .hours .hour {
       margin-left: -6px; }
       #mainClock .hours .hour:before {
-        font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 700; /* bold */
         font-size: 12px;
         position: absolute;
         top: 40px;
         content: 'hour'; }
     #mainClock .hours .minute:before {
-      font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 700; /* bold */
       font-size: 12px;
       position: absolute;
       top: 40px;
       content: 'minute'; }
     #mainClock .hours .second:before {
-      font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 700; /* bold */
       font-size: 12px;
       position: absolute;
       top: 40px;
@@ -213,7 +223,8 @@ body {
       margin-top: -2em;
       position: relative; }
       #mainClock .hours .millisecond:before {
-        font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 600; /* semibold */
         font-size: 12px;
         position: absolute;
         top: 28px;
@@ -227,7 +238,8 @@ body {
     position: absolute;
     right: 10px;
     bottom: 130px;
-    font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 600; /* semibold */
     font-size: 10px;
     color: rgba(0, 13, 28, 0.8);
     border-radius: 2px;
@@ -409,7 +421,8 @@ body {
     position: absolute;
     width: 166px; }
   #subClock .subHour .text, #subClock .subMinute .text, #subClock .subSecond .text {
-    font-family: 'signikalight';
+font-family: 'Signika', sans-serif;
+font-weight: 300; /* light */
     font-size: 10px;
     line-height: 1.5;
     text-shadow: 0 0 8px #1a85ff;
@@ -417,7 +430,8 @@ body {
     border-bottom-width: 1px;
     border-bottom-style: solid; }
   #subClock .subHour h1, #subClock .subMinute h1, #subClock .subSecond h1 {
-    font-family: 'signikasemibold';
+font-family: 'Signika', sans-serif;
+font-weight: 600; /* semibold */
     font-size: 20px;
     text-shadow: 0 0 8px #1a85ff;
     margin: 0;
@@ -435,7 +449,8 @@ body {
     border-width: 2px;
     border-style: solid; }
   #subClock .subHour time, #subClock .subMinute time, #subClock .subSecond time {
-    font-family: 'signikaregular';
+font-family: 'Signika', sans-serif;
+font-weight: 400; /* regular */
     font-size: 80px;
     text-shadow: 0 0 8px #1a85ff;
     display: block;
@@ -460,7 +475,8 @@ body {
 #detailText {
   position: absolute;
   bottom: 20px;
-  font-family: 'signikalight';
+font-family: 'Signika', sans-serif;
+font-weight: 300; /* light */
   font-size: 10px;
   text-shadow: 0 0 8px #1a85ff; }
 
