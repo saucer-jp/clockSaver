@@ -1,22 +1,104 @@
 // animation.scss
 
-@-webkit-keyframes 'hoge' {
+@-webkit-keyframes 'container' {
   0% {
-    -webkit-transform: rotateX( 80deg ) rotateZ( 0deg );
+    -webkit-perspective-origin: 50% 50%;
   }
   100% {
-    -webkit-transform: rotateX( 80deg ) rotateZ( 360deg );
+    -webkit-perspective-origin: 66% 60%;
+  }
+}
+@-webkit-keyframes 'clockContainer' {
+  0% {
+    -webkit-transform: rotateY( 0deg ) translateZ( 0px );
+  }
+  100% {
+    -webkit-transform: rotateY( 45deg ) rotateZ( 20deg ) translateZ( -300px ) translateX( -60px );
+  }
+}
+@-webkit-keyframes 'mainClock' {
+  0% {
+    -webkit-transform: translateZ( 0px );
+  }
+  100% {
+    //-webkit-transform: translateZ( 750px );
+    -webkit-transform: translateZ( 200px );
+  }
+}
+@-webkit-keyframes 'subHour' {
+  0% {
+    -webkit-transform: translateZ( 0px );
+  }
+  100% {
+    //-webkit-transform: translateZ( 300px );
+    -webkit-transform: translateZ( 740px );
+  }
+}
+@-webkit-keyframes 'subMinute' {
+  0% {
+    -webkit-transform: translateZ( 0px );
+  }
+  100% {
+    //-webkit-transform: translateZ( 100px );
+    -webkit-transform: translateZ( 770px );
+  }
+}
+@-webkit-keyframes 'subSecond' {
+  0% {
+    -webkit-transform: translateZ( 0px );
+  }
+  100% {
+    //-webkit-transform: translateZ( -100px );
+    -webkit-transform: translateZ( 800px );
+  }
+}
+@-webkit-keyframes 'subClock' {
+  0% {
+    -webkit-transform: translateZ( 0px );
+  }
+  100% {
+    -webkit-transform: translateZ( -1000px );
   }
 }
 
-
+$duration: 0.5s;
+$easing: ease;
+$delay: 3s;
+$fill: forwards;
 
 #container {
-  -webkit-perspective: 600;
+  -webkit-perspective: 800;
+  //-webkit-perspective-origin: 60% 76%;
+  -webkit-animation: 'container' $duration $easing $delay $fill;
+}
+
+#clockContainer {
+  //-webkit-transform: rotateY( 40deg ) translateZ( -300px );
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation: 'clockContainer' $duration $easing $delay $fill;
 }
 
 #mainClock {
-  //-webkit-transform: rotateX( 80deg ) translate( 0,-150px );
-  //-webkit-transform: scale( 2 );
-  //-webkit-animation: 'hoge' 20s linear infinite;
+  //-webkit-transform: translateZ( 700px );
+  -webkit-animation: 'mainClock' $duration $easing $delay $fill;
+}
+
+#analogClock {
+  .subHour {
+    //-webkit-transform: translateZ( 300px );
+    -webkit-animation: 'subHour' $duration $easing $delay $fill;
+  }
+  .subMinute {
+    //-webkit-transform: translateZ( 100px );
+    -webkit-animation: 'subMinute' $duration $easing $delay $fill;
+  }
+  .subSecond {
+    //-webkit-transform: translateZ( -100px );
+    -webkit-animation: 'subSecond' $duration $easing $delay $fill;
+  }
+}
+
+#subClock {
+  //-webkit-transform: translateZ( -1000px );
+  -webkit-animation: 'subClock' $duration $easing $delay $fill;
 }

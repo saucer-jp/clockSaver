@@ -22,15 +22,75 @@
   font-weight: normal;
   font-style: normal; }
 
-@-webkit-keyframes 'hoge' {
+@-webkit-keyframes 'container' {
   0% {
-    -webkit-transform: rotateX(80deg) rotateZ(0deg); }
+    -webkit-perspective-origin: 50% 50%; }
 
   100% {
-    -webkit-transform: rotateX(80deg) rotateZ(360deg); } }
+    -webkit-perspective-origin: 66% 60%; } }
+
+@-webkit-keyframes 'clockContainer' {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(0px); }
+
+  100% {
+    -webkit-transform: rotateY(45deg) rotateZ(20deg) translateZ(-300px) translateX(-60px); } }
+
+@-webkit-keyframes 'mainClock' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(200px); } }
+
+@-webkit-keyframes 'subHour' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(740px); } }
+
+@-webkit-keyframes 'subMinute' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(770px); } }
+
+@-webkit-keyframes 'subSecond' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(800px); } }
+
+@-webkit-keyframes 'subClock' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(-1000px); } }
 
 #container {
-  -webkit-perspective: 600; }
+  -webkit-perspective: 800;
+  -webkit-animation: "container" 0.5s ease 3s forwards; }
+
+#clockContainer {
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation: "clockContainer" 0.5s ease 3s forwards; }
+
+#mainClock {
+  -webkit-animation: "mainClock" 0.5s ease 3s forwards; }
+
+#analogClock .subHour {
+  -webkit-animation: "subHour" 0.5s ease 3s forwards; }
+#analogClock .subMinute {
+  -webkit-animation: "subMinute" 0.5s ease 3s forwards; }
+#analogClock .subSecond {
+  -webkit-animation: "subSecond" 0.5s ease 3s forwards; }
+
+#subClock {
+  -webkit-animation: "subClock" 0.5s ease 3s forwards; }
 
 #mainClock .date .slash1, #mainClock .date .slash2, #mainClock .miniClock, #mainClock .week .slash1, #mainClock .week .slash2, #mainClock .week .slash3, #mainClock .week .slash4, #mainClock .week .slash5, #mainClock .week .slash6, #mainClock .week .slash7, #analogClock .subHour .stop1, #analogClock .subHour .stop2, #analogClock .subHour .stop3, #analogClock .subHour .stop4, #analogClock .subHour .stop5, #analogClock .subHour .stop6, #analogClock .subHour .stop7, #analogClock .subHour .stop8, #analogClock .subHour .stop9, #analogClock .subHour .stop10, #analogClock .subHour .stop11, #analogClock .subHour .stop12, #analogClock .subHour .hourHand, #analogClock .subMinute .stop1, #analogClock .subMinute .stop2, #analogClock .subMinute .stop3, #analogClock .subMinute .stop4, #analogClock .subMinute .stop5, #analogClock .subMinute .stop6, #analogClock .subMinute .stop7, #analogClock .subMinute .stop8, #analogClock .subMinute .stop9, #analogClock .subMinute .stop10, #analogClock .subMinute .stop11, #analogClock .subMinute .stop12, #analogClock .subMinute .minuteHand, #analogClock .subSecond .stop1, #analogClock .subSecond .stop2, #analogClock .subSecond .stop3, #analogClock .subSecond .stop4, #analogClock .subSecond .stop5, #analogClock .subSecond .stop6, #analogClock .subSecond .stop7, #analogClock .subSecond .stop8, #analogClock .subSecond .stop9, #analogClock .subSecond .stop10, #analogClock .subSecond .stop11, #analogClock .subSecond .stop12, #analogClock .subSecond .secondHand {
   background: rgba(255, 255, 255, 0.75);
@@ -75,7 +135,7 @@ body {
 #container {
   position: relative;
   margin: auto;
-  width: 1200px;
+  width: 1100px;
   height: 640px;
   -webkit-transform-origin: 50% 0; }
 
