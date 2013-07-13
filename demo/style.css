@@ -1,0 +1,475 @@
+@font-face {
+  font-family: 'signikabold';
+  src: url("signika-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'signikalight';
+  src: url("signika-light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'signikaregular';
+  src: url("signika-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'signikasemibold';
+  src: url("signika-semibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@-webkit-keyframes 'container' {
+  0% {
+    -webkit-perspective-origin: 50% 50%; }
+
+  100% {
+    -webkit-perspective-origin: 66% 60%; } }
+
+@-webkit-keyframes 'clockContainer' {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(0px); }
+
+  100% {
+    -webkit-transform: rotateY(45deg) rotateZ(20deg) translateZ(-300px) translateX(-60px); } }
+
+@-webkit-keyframes 'mainClock' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(200px); } }
+
+@-webkit-keyframes 'subHour' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(740px); } }
+
+@-webkit-keyframes 'subMinute' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(770px); } }
+
+@-webkit-keyframes 'subSecond' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(800px); } }
+
+@-webkit-keyframes 'subClock' {
+  0% {
+    -webkit-transform: translateZ(0px); }
+
+  100% {
+    -webkit-transform: translateZ(-1000px); } }
+
+#container {
+  -webkit-perspective: 800;
+  -webkit-animation: "container" 0.5s ease 3s forwards; }
+
+#clockContainer {
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation: "clockContainer" 0.5s ease 3s forwards; }
+
+#mainClock {
+  -webkit-animation: "mainClock" 0.5s ease 3s forwards; }
+
+#analogClock .subHour {
+  -webkit-animation: "subHour" 0.5s ease 3s forwards; }
+#analogClock .subMinute {
+  -webkit-animation: "subMinute" 0.5s ease 3s forwards; }
+#analogClock .subSecond {
+  -webkit-animation: "subSecond" 0.5s ease 3s forwards; }
+
+#subClock {
+  -webkit-animation: "subClock" 0.5s ease 3s forwards; }
+
+#mainClock .date .slash1, #mainClock .date .slash2, #mainClock .miniClock, #mainClock .week .slash1, #mainClock .week .slash2, #mainClock .week .slash3, #mainClock .week .slash4, #mainClock .week .slash5, #mainClock .week .slash6, #mainClock .week .slash7, #analogClock .subHour .stop1, #analogClock .subHour .stop2, #analogClock .subHour .stop3, #analogClock .subHour .stop4, #analogClock .subHour .stop5, #analogClock .subHour .stop6, #analogClock .subHour .stop7, #analogClock .subHour .stop8, #analogClock .subHour .stop9, #analogClock .subHour .stop10, #analogClock .subHour .stop11, #analogClock .subHour .stop12, #analogClock .subHour .hourHand, #analogClock .subMinute .stop1, #analogClock .subMinute .stop2, #analogClock .subMinute .stop3, #analogClock .subMinute .stop4, #analogClock .subMinute .stop5, #analogClock .subMinute .stop6, #analogClock .subMinute .stop7, #analogClock .subMinute .stop8, #analogClock .subMinute .stop9, #analogClock .subMinute .stop10, #analogClock .subMinute .stop11, #analogClock .subMinute .stop12, #analogClock .subMinute .minuteHand, #analogClock .subSecond .stop1, #analogClock .subSecond .stop2, #analogClock .subSecond .stop3, #analogClock .subSecond .stop4, #analogClock .subSecond .stop5, #analogClock .subSecond .stop6, #analogClock .subSecond .stop7, #analogClock .subSecond .stop8, #analogClock .subSecond .stop9, #analogClock .subSecond .stop10, #analogClock .subSecond .stop11, #analogClock .subSecond .stop12, #analogClock .subSecond .secondHand {
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-filter: drop-shadow(0 0 10px rgba(26, 133, 255, 0.8)); }
+
+#mainClock .week, #subClock .subHour .text, #subClock .subMinute .text, #subClock .subSecond .text, #subClock .subHour h1:before, #subClock .subMinute h1:before, #subClock .subSecond h1:before {
+  border-color: rgba(255, 255, 255, 0.75);
+  -webkit-filter: drop-shadow(0 0 10px rgba(26, 133, 255, 0.8)); }
+
+#mainClock .date .slash1, #mainClock .date .slash2, #mainClock .week .slash1, #mainClock .week .slash2, #mainClock .week .slash3, #mainClock .week .slash4, #mainClock .week .slash5, #mainClock .week .slash6, #mainClock .week .slash7 {
+  display: inline-block;
+  border-radius: 2px;
+  -webkit-transform: rotate(20deg); }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8; }
+
+body {
+  background-image: -webkit-linear-gradient(top, #000d1c, #001936);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  overflow: hidden; }
+
+.body-bg {
+  opacity: 0.05;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("body-bg.svg");
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: contain; }
+
+#container {
+  position: relative;
+  margin: auto;
+  width: 1100px;
+  height: 640px;
+  -webkit-transform-origin: 50% 0; }
+
+#mainClock {
+  position: relative;
+  margin: auto;
+  top: 50px;
+  width: 590px; }
+  #mainClock .date {
+    position: relative;
+    font-family: 'signikaregular';
+    display: block;
+    font-size: 60px;
+    text-shadow: 0 0 8px #1a85ff; }
+    #mainClock .date .year:before {
+      font-family: 'signikasemibold';
+      font-size: 12px;
+      position: absolute;
+      top: 5px;
+      content: 'year'; }
+    #mainClock .date .month:before {
+      font-family: 'signikasemibold';
+      font-size: 12px;
+      position: absolute;
+      top: 5px;
+      content: 'month'; }
+    #mainClock .date .day:before {
+      font-family: 'signikasemibold';
+      font-size: 12px;
+      position: absolute;
+      top: 5px;
+      content: 'day'; }
+    #mainClock .date .slash1 {
+      margin-left: 40px;
+      margin-right: 36px;
+      vertical-align: -6px;
+      width: 6px;
+      height: 78px; }
+    #mainClock .date .slash2 {
+      margin-left: 40px;
+      margin-right: 36px;
+      vertical-align: -6px;
+      width: 6px;
+      height: 78px; }
+  #mainClock .hours {
+    position: relative;
+    font-family: 'signikaregular';
+    display: block;
+    font-size: 146px;
+    margin-top: -20px;
+    text-shadow: 0 0 8px #1a85ff; }
+    #mainClock .hours .hour {
+      margin-left: -6px; }
+      #mainClock .hours .hour:before {
+        font-family: 'signikasemibold';
+        font-size: 12px;
+        position: absolute;
+        top: 40px;
+        content: 'hour'; }
+    #mainClock .hours .minute:before {
+      font-family: 'signikasemibold';
+      font-size: 12px;
+      position: absolute;
+      top: 40px;
+      content: 'minute'; }
+    #mainClock .hours .second:before {
+      font-family: 'signikasemibold';
+      font-size: 12px;
+      position: absolute;
+      top: 40px;
+      content: 'second'; }
+    #mainClock .hours .millisecond {
+      font-size: 36px;
+      display: block;
+      margin-top: -2em;
+      position: relative; }
+      #mainClock .hours .millisecond:before {
+        font-family: 'signikasemibold';
+        font-size: 12px;
+        position: absolute;
+        top: 28px;
+        left: 70px;
+        content: 'millisecond'; }
+    #mainClock .hours .colon {
+      display: inline-block;
+      margin-left: -20px;
+      margin-right: -20px; }
+  #mainClock .miniClock {
+    position: absolute;
+    right: 10px;
+    bottom: 130px;
+    font-family: 'signikasemibold';
+    font-size: 10px;
+    color: rgba(0, 13, 28, 0.8);
+    border-radius: 2px;
+    padding: 0 10px;
+    letter-spacing: 1px; }
+  #mainClock .week {
+    border-width: 10px;
+    border-style: solid;
+    box-sizing: border-box;
+    text-align: center;
+    height: 108px; }
+    #mainClock .week .slash1 {
+      width: 7px;
+      height: 123px;
+      margin: -17px 30px 0; }
+    #mainClock .week .slash2 {
+      width: 7px;
+      height: 123px;
+      margin: -17px 30px 0; }
+    #mainClock .week .slash3 {
+      width: 7px;
+      height: 123px;
+      margin: -17px 30px 0; }
+    #mainClock .week .slash4 {
+      width: 7px;
+      height: 123px;
+      margin: -17px 30px 0; }
+    #mainClock .week .slash5 {
+      width: 7px;
+      height: 123px;
+      margin: -17px 30px 0; }
+    #mainClock .week .slash6 {
+      width: 7px;
+      height: 123px;
+      margin: -17px 30px 0; }
+    #mainClock .week .slash7 {
+      width: 7px;
+      height: 123px;
+      margin: -17px 30px 0; }
+
+#analogClock {
+  position: absolute;
+  width: 444px;
+  height: 444px;
+  top: 60px;
+  left: 370px; }
+  #analogClock .subHour .outer, #analogClock .subMinute .outer, #analogClock .subSecond .outer {
+    position: absolute;
+    width: 444px;
+    height: 444px;
+    border-radius: 222px;
+    box-sizing: border-box;
+    border-width: 12px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.1);
+    -webkit-filter: drop-shadow(0 0 10px rgba(26, 133, 255, 0.8)); }
+  #analogClock .subHour .inner, #analogClock .subMinute .inner, #analogClock .subSecond .inner {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 364px;
+    height: 364px;
+    border-radius: 182px;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-filter: drop-shadow(0 0 10px rgba(26, 133, 255, 0.8)); }
+  #analogClock .subHour .stop1, #analogClock .subHour .stop2, #analogClock .subHour .stop3, #analogClock .subHour .stop4, #analogClock .subHour .stop5, #analogClock .subHour .stop6, #analogClock .subHour .stop7, #analogClock .subHour .stop8, #analogClock .subHour .stop9, #analogClock .subHour .stop10, #analogClock .subHour .stop11, #analogClock .subHour .stop12, #analogClock .subMinute .stop1, #analogClock .subMinute .stop2, #analogClock .subMinute .stop3, #analogClock .subMinute .stop4, #analogClock .subMinute .stop5, #analogClock .subMinute .stop6, #analogClock .subMinute .stop7, #analogClock .subMinute .stop8, #analogClock .subMinute .stop9, #analogClock .subMinute .stop10, #analogClock .subMinute .stop11, #analogClock .subMinute .stop12, #analogClock .subSecond .stop1, #analogClock .subSecond .stop2, #analogClock .subSecond .stop3, #analogClock .subSecond .stop4, #analogClock .subSecond .stop5, #analogClock .subSecond .stop6, #analogClock .subSecond .stop7, #analogClock .subSecond .stop8, #analogClock .subSecond .stop9, #analogClock .subSecond .stop10, #analogClock .subSecond .stop11, #analogClock .subSecond .stop12 {
+    width: 2px;
+    height: 26px;
+    left: 221px;
+    top: 0;
+    position: absolute;
+    -webkit-transform-origin: 0 222px; }
+  #analogClock .subHour {
+    position: absolute; }
+    #analogClock .subHour .stop1 {
+      -webkit-transform: rotate(30deg); }
+    #analogClock .subHour .stop2 {
+      -webkit-transform: rotate(60deg); }
+    #analogClock .subHour .stop3 {
+      -webkit-transform: rotate(90deg); }
+    #analogClock .subHour .stop4 {
+      -webkit-transform: rotate(120deg); }
+    #analogClock .subHour .stop5 {
+      -webkit-transform: rotate(150deg); }
+    #analogClock .subHour .stop6 {
+      -webkit-transform: rotate(180deg); }
+    #analogClock .subHour .stop7 {
+      -webkit-transform: rotate(210deg); }
+    #analogClock .subHour .stop8 {
+      -webkit-transform: rotate(240deg); }
+    #analogClock .subHour .stop9 {
+      -webkit-transform: rotate(270deg); }
+    #analogClock .subHour .stop10 {
+      -webkit-transform: rotate(300deg); }
+    #analogClock .subHour .stop11 {
+      -webkit-transform: rotate(330deg); }
+    #analogClock .subHour .stop12 {
+      -webkit-transform: rotate(360deg); }
+    #analogClock .subHour .hourHand {
+      width: 10px;
+      height: 158px;
+      -webkit-transform-origin: 50% 100%;
+      position: absolute;
+      left: 217px;
+      top: 64px; }
+  #analogClock .subMinute {
+    position: absolute; }
+    #analogClock .subMinute .stop1 {
+      -webkit-transform: rotate(30deg); }
+    #analogClock .subMinute .stop2 {
+      -webkit-transform: rotate(60deg); }
+    #analogClock .subMinute .stop3 {
+      -webkit-transform: rotate(90deg); }
+    #analogClock .subMinute .stop4 {
+      -webkit-transform: rotate(120deg); }
+    #analogClock .subMinute .stop5 {
+      -webkit-transform: rotate(150deg); }
+    #analogClock .subMinute .stop6 {
+      -webkit-transform: rotate(180deg); }
+    #analogClock .subMinute .stop7 {
+      -webkit-transform: rotate(210deg); }
+    #analogClock .subMinute .stop8 {
+      -webkit-transform: rotate(240deg); }
+    #analogClock .subMinute .stop9 {
+      -webkit-transform: rotate(270deg); }
+    #analogClock .subMinute .stop10 {
+      -webkit-transform: rotate(300deg); }
+    #analogClock .subMinute .stop11 {
+      -webkit-transform: rotate(330deg); }
+    #analogClock .subMinute .stop12 {
+      -webkit-transform: rotate(360deg); }
+    #analogClock .subMinute .minuteHand {
+      width: 6px;
+      height: 188px;
+      -webkit-transform-origin: 50% 100%;
+      position: absolute;
+      left: 219px;
+      top: 34px; }
+  #analogClock .subSecond {
+    position: absolute; }
+    #analogClock .subSecond .stop1 {
+      -webkit-transform: rotate(30deg); }
+    #analogClock .subSecond .stop2 {
+      -webkit-transform: rotate(60deg); }
+    #analogClock .subSecond .stop3 {
+      -webkit-transform: rotate(90deg); }
+    #analogClock .subSecond .stop4 {
+      -webkit-transform: rotate(120deg); }
+    #analogClock .subSecond .stop5 {
+      -webkit-transform: rotate(150deg); }
+    #analogClock .subSecond .stop6 {
+      -webkit-transform: rotate(180deg); }
+    #analogClock .subSecond .stop7 {
+      -webkit-transform: rotate(210deg); }
+    #analogClock .subSecond .stop8 {
+      -webkit-transform: rotate(240deg); }
+    #analogClock .subSecond .stop9 {
+      -webkit-transform: rotate(270deg); }
+    #analogClock .subSecond .stop10 {
+      -webkit-transform: rotate(300deg); }
+    #analogClock .subSecond .stop11 {
+      -webkit-transform: rotate(330deg); }
+    #analogClock .subSecond .stop12 {
+      -webkit-transform: rotate(360deg); }
+    #analogClock .subSecond .secondHand {
+      width: 2px;
+      height: 188px;
+      -webkit-transform-origin: 50% 100%;
+      position: absolute;
+      left: 221px;
+      top: 34px; }
+
+#subClock {
+  width: 518px;
+  top: 200px;
+  left: 340px;
+  position: absolute; }
+  #subClock .subHour, #subClock .subMinute, #subClock .subSecond {
+    position: absolute;
+    width: 166px; }
+  #subClock .subHour .text, #subClock .subMinute .text, #subClock .subSecond .text {
+    font-family: 'signikalight';
+    font-size: 10px;
+    line-height: 1.5;
+    text-shadow: 0 0 8px #1a85ff;
+    padding-bottom: 1em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid; }
+  #subClock .subHour h1, #subClock .subMinute h1, #subClock .subSecond h1 {
+    font-family: 'signikasemibold';
+    font-size: 20px;
+    text-shadow: 0 0 8px #1a85ff;
+    margin: 0;
+    margin-top: -4px; }
+  #subClock .subHour h1:before, #subClock .subMinute h1:before, #subClock .subSecond h1:before {
+    display: inline-block;
+    text-align: center;
+    line-height: 18px;
+    vertical-align: 3px;
+    margin-right: 10px;
+    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid; }
+  #subClock .subHour time, #subClock .subMinute time, #subClock .subSecond time {
+    font-family: 'signikaregular';
+    font-size: 80px;
+    text-shadow: 0 0 8px #1a85ff;
+    display: block;
+    margin-top: -8px;
+    line-height: 1; }
+  #subClock .subHour {
+    top: 0;
+    left: 0; }
+    #subClock .subHour h1:before {
+      content: 'H'; }
+  #subClock .subMinute {
+    top: 0;
+    left: 176px; }
+    #subClock .subMinute h1:before {
+      content: 'M'; }
+  #subClock .subSecond {
+    top: 0;
+    left: 352px; }
+    #subClock .subSecond h1:before {
+      content: 'S'; }
+
+#detailText {
+  position: absolute;
+  bottom: 20px;
+  font-family: 'signikalight';
+  font-size: 10px;
+  text-shadow: 0 0 8px #1a85ff; }
+
+#pxgLogo {
+  position: absolute;
+  bottom: 26px;
+  right: 0;
+  width: 60px;
+  height: 14px;
+  background-image: url("pixelgrid-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0; }
